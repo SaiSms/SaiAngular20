@@ -1,0 +1,59 @@
+<div style="max-width:800px;margin:24px auto;font-family:Arial, Helvetica, sans-serif;">
+
+    <h2>Employee (NgRx CRUD Example)</h2>
+
+    <!-- <div *ngIf="loading$ | async" style="color:blue;">Loading...</div>
+
+    <div *ngIf="error$ | async as err" style="color:red;">
+        Error: {{ err?.message || (err | json) }}
+    </div> -->
+
+    <!-- Employee Form -->
+    <form (ngSubmit)="save()" style="margin-bottom:16px;">
+
+        <!-- Full Name -->
+        <input type="text" placeholder="Full Name" [(ngModel)]="formModel.fullName" name="fullName" required />
+
+        <!-- Email -->
+        <input type="email" placeholder="Email" [(ngModel)]="formModel.email" name="email" required />
+
+        <!-- Phone -->
+        <input type="text" placeholder="Phone" [(ngModel)]="formModel.phone" name="phone" required />
+
+        <!-- Gender -->
+        <select [(ngModel)]="formModel.gender" name="gender" required>
+            <option value="" disabled>Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <!-- Date of Joining -->
+        <input type="date" [(ngModel)]="formModel.dateOfJoining" name="dateOfJoining" required />
+
+        <!-- Department -->
+        <input type="number" placeholder="Department ID" [(ngModel)]="formModel.departmentId" name="departmentId"
+            required />
+
+        <!-- Designation -->
+        <input type="number" placeholder="Designation ID" [(ngModel)]="formModel.designationId" name="designationId"
+            required />
+
+        <!-- Employee Type -->
+        <select [(ngModel)]="formModel.employeeType" name="employeeType" required>
+            <option value="" disabled>Select Employee Type</option>
+            <option value="Full-Time">Full-Time</option>
+            <option value="Part-Time">Part-Time</option>
+            <option value="Contract">Contract</option>
+        </select>
+
+        <!-- Salary -->
+        <input type="number" placeholder="Salary" [(ngModel)]="formModel.salary" name="salary" required />
+
+        <!-- Buttons -->
+        <button type="submit">Save</button>
+        <!-- <button type="submit">{{ isEditing ? 'Update' : 'Add' }}</button> -->
+        <!-- <button type="button" (click)="cancelEdit()" *ngIf="isEditing">Cancel</button> -->
+    </form>
+
+</div>

@@ -1,0 +1,15 @@
+<p>{{ componentTitle() }}</p>
+
+<div class="search-container">
+    <input [formControl]="searchControl" placeholder="Search posts..." />
+
+    <div *ngIf="loading" class="loading">Loading…</div>
+    <div *ngIf="error" class="error">
+        Error loading results — <button (click)="retry()">Retry</button>
+    </div>
+
+    <ul *ngIf="(results$ | async) as results">
+        <li *ngFor="let r of results">{{ r.title || r.name || (r.id && 'Item #' + r.id) }}</li>
+        <li *ngIf="results.length === 0">No results</li>
+    </ul>
+</div>
