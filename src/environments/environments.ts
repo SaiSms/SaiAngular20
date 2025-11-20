@@ -1,6 +1,6 @@
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:4200/',
+  apiUrl: '/api',
   mode: 'development',
   cursorKey: 'your-free-cursor-api-key-here'
 };
